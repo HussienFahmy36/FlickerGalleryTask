@@ -6,7 +6,7 @@
 //
 
 import Foundation
-protocol FlickerImagesListViewModelDelegate {
+protocol FlickerImagesListViewModelDelegate: AnyObject {
     func searchDidComplete()
 }
 
@@ -21,7 +21,7 @@ class FlickerImagesListViewModel {
             currentPageDidUpdate()
         }
     }
-    public var delegate: FlickerImagesListViewModelDelegate?
+    public weak var delegate: FlickerImagesListViewModelDelegate?
     public var items: [FeederDataItem] = []
     
     init(
